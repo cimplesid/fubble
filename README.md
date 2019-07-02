@@ -3,7 +3,7 @@
 An flutter animation project to implement the canvas .
 
 <a href="https://youtu.be/kwtu2Wf1fO8">
-        <img src="https://www.canva.com/design/DADef1q0xQw/view" align="center" alt="download-icon"/>
+        <img src="https://www.canva.com/design/DADef1q0xQw/SSL-t28bKVtaBfxp1-v37g/view" align="center" alt="download-icon"/>
     </a>
 
 ## Working
