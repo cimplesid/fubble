@@ -15,8 +15,8 @@ An flutter animation project to implement the canvas .
 
 
 ## Screenshots
- <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/home.png"   align="center" height="480px" />
-  <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/setting.png" align="center" height="480px" alt="icon"/>
+ <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/home.png"   align="center" height="480px" /> <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/setting.png" align="center" height="480px" alt="icon"/>
+  
  
 ## Contribute
 
