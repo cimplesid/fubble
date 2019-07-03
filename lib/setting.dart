@@ -108,254 +108,255 @@ class _SettingState extends State<Setting> {
         ),
         title: Text('Settings'),
       ),
-      body: Column(
-        children: <Widget>[
-          Card(
-            elevation: 2,
-            child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Card(
+              elevation: 2,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Text(
+                      'Number of bubbles',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Slider(
+                      activeColor: Colors.indigoAccent,
+                      min: 10.0,
+                      divisions: 1040,
+                      label: '${bubbleCount.round()}',
+                      max: 1050.0,
+                      onChanged: (value) {
+                        setState(() => bubbleCount = value);
+                      },
+                      value: bubbleCount,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Card(
+              elevation: 2,
               child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    height: 20,
-                  ),
                   Text(
-                    'Number of bubbles',
+                    'Bubble Size',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Slider(
                     activeColor: Colors.indigoAccent,
-                    min: 10.0,
+                    min: 8.0,
                     divisions: 1040,
-                    label: '${bubbleCount.round()}',
-                    max: 1050.0,
+                    label: '${maxBubbleSize.round()}',
+                    max: 50.0,
                     onChanged: (value) {
-                      setState(() => bubbleCount = value);
+                      setState(() => maxBubbleSize = value);
                     },
-                    value: bubbleCount,
+                    value: maxBubbleSize,
                   ),
                 ],
               ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Card(
-            elevation: 2,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Bubble Size',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Slider(
-                  activeColor: Colors.indigoAccent,
-                  min: 8.0,
-                  divisions: 1040,
-                  label: '${maxBubbleSize.round()}',
-                  max: 50.0,
-                  onChanged: (value) {
-                    setState(() => maxBubbleSize = value);
-                  },
-                  value: maxBubbleSize,
-                ),
-              ],
+            SizedBox(
+              height: 6,
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Card(
-            elevation: 2,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Bubble Speed',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Slider(
-                  activeColor: Colors.indigoAccent,
-                  min: 1.0,
-                  divisions: 140,
-                  label: '${speed.round()}',
-                  max: 23.0,
-                  onChanged: (value) {
-                    setState(() => speed = value);
-                  },
-                  value: speed,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Card(
-            elevation: 2,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Canvas width',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Slider(
-                  activeColor: Colors.indigoAccent,
-                  min: 120.0,
-                  // label: '${canvasWidth}',
-                  max: MediaQuery.of(context).size.width,
-                  onChanged: (value) {
-                    setState(() => canvasWidth = value);
-                  },
-                  value: canvasWidth == null
-                      ? MediaQuery.of(context).size.width
-                      : canvasWidth,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Card(
-            elevation: 2,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Canvas Height',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Slider(
-                  activeColor: Colors.indigoAccent,
-                  min: 120.0,
-                  max: MediaQuery.of(context).size.height,
-                  onChanged: (value) {
-                    setState(() => canvasHeight = value);
-                  },
-                  value: canvasHeight == null
-                      ? MediaQuery.of(context).size.height
-                      : canvasHeight,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Card(
-            elevation: 2,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Bubble color',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 9, right: 9),
-                  child: DropdownButton(
-                    underline: Container(),
-                    value: color,
-                    hint: Text('Choose custom bubble color'),
+            Card(
+              elevation: 2,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Bubble Speed',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Slider(
+                    activeColor: Colors.indigoAccent,
+                    min: 1.0,
+                    divisions: 140,
+                    label: '${speed.round()}',
+                    max: 23.0,
                     onChanged: (value) {
-                      setState(() {
-                        color = value;
-                      });
+                      setState(() => speed = value);
                     },
-                    items: this.colorsList,
+                    value: speed,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Card(
+              elevation: 2,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Canvas width',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Slider(
+                    activeColor: Colors.indigoAccent,
+                    min: 120.0,
+                    // label: '${canvasWidth}',
+                    max: MediaQuery.of(context).size.width,
+                    onChanged: (value) {
+                      setState(() => canvasWidth = value);
+                    },
+                    value: canvasWidth == null
+                        ? MediaQuery.of(context).size.width
+                        : canvasWidth,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Card(
+              elevation: 2,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Canvas Height',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Slider(
+                    activeColor: Colors.indigoAccent,
+                    min: 120.0,
+                    max: MediaQuery.of(context).size.height,
+                    onChanged: (value) {
+                      setState(() => canvasHeight = value);
+                    },
+                    value: canvasHeight == null
+                        ? MediaQuery.of(context).size.height
+                        : canvasHeight,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Card(
+              elevation: 2,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Bubble color',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 9, right: 9),
+                    child: DropdownButton(
+                      underline: Container(),
+                      value: color,
+                      hint: Text('Choose custom bubble color'),
+                      onChanged: (value) {
+                        setState(() {
+                          color = value;
+                        });
+                      },
+                      items: this.colorsList,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Card(
+                  elevation: 2,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Bubble animation',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 9, right: 9),
+                        child: DropdownButton(
+                          underline: Container(),
+                          value: animation,
+                          hint: Text('Default'),
+                          onChanged: (value) {
+                            setState(() {
+                              animation = value;
+                            });
+                          },
+                          items: this.animationList,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 2,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'On Draw Effect',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 9, right: 9),
+                        child: DropdownButton(
+                          underline: Container(),
+                          value: gesture,
+                          hint: Text('Default'),
+                          onChanged: (value) {
+                            setState(() {
+                              gesture = value;
+                            });
+                          },
+                          items: this.gestureList,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Card(
-                elevation: 2,
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      'Bubble animation',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 9, right: 9),
-                      child: DropdownButton(
-                        underline: Container(),
-                        value: animation,
-                        hint: Text('Default'),
-                        onChanged: (value) {
-                          setState(() {
-                            animation = value;
-                          });
-                        },
-                        items: this.animationList,
-                      ),
-                    ),
-                  ],
+            Container(
+              child: RaisedButton(
+                elevation: 5,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Bubbles(
+                                bubbleCount: bubbleCount,
+                                maxBubbleSize: maxBubbleSize,
+                                speed: speed,
+                                color: color,
+                                animation: animation,
+                                gesture: gesture,
+                                canvasWidth: canvasWidth,
+                                canvasHeight: canvasHeight,
+                              )));
+                },
+                child: Text(
+                  'Save Settings',
+                  style: TextStyle(color: Colors.white),
                 ),
+                color: Theme.of(context).primaryColor,
               ),
-              Card(
-                elevation: 2,
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      'On Draw Effect',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 9, right: 9),
-                      child: DropdownButton(
-                        underline: Container(),
-                        value: gesture,
-                        hint: Text('Default'),
-                        onChanged: (value) {
-                          setState(() {
-                            gesture = value;
-                          });
-                        },
-                        items: this.gestureList,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Container(
-            child: RaisedButton(
-              elevation: 5,
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Bubbles(
-                              bubbleCount: bubbleCount,
-                              maxBubbleSize: maxBubbleSize,
-                              speed: speed,
-                              color: color,
-                              animation: animation,
-                              gesture: gesture,
-                              canvasWidth: canvasWidth,
-                              canvasHeight: canvasHeight,
-                            )));
-              },
-              child: Text(
-                'Save Settings',
-                style: TextStyle(color: Colors.white),
-              ),
-              color: Theme.of(context).primaryColor,
+              decoration: BoxDecoration(shape: BoxShape.circle),
             ),
-            decoration: BoxDecoration(shape: BoxShape.circle),
-          ),
-          Expanded(child: SizedBox()),
-          Text(
-            'Fubble v1.0',
-            style: TextStyle(color: Colors.grey),
-          )
-        ],
+            Text(
+              'Fubble v1.0',
+              style: TextStyle(color: Colors.grey),
+            )
+          ],
+        ),
       ),
     );
   }
