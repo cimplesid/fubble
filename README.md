@@ -3,7 +3,7 @@
 An flutter animation project to implement the canvas .
 
 <a href="https://youtu.be/kwtu2Wf1fO8">
-        <img src="https://i9.ytimg.com/vi/kwtu2Wf1fO8/hqdefault.jpg" align="center" alt="icon"/>
+        <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/thumb.jpg" align="center" alt="icon"/>
     </a>
     
     
@@ -13,6 +13,11 @@ An flutter animation project to implement the canvas .
 
 :movie_camera: [watch full video here](https://youtu.be/kwtu2Wf1fO8)
 
+
+## Screenshots
+ <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/home.png"   align="center" height="480px" />
+  <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/setting.png" align="center" height="480px" alt="icon"/>
+ 
 ## Contribute
 
 - [Fork](https://github.com/cimplesid/fubble/fork) the project
